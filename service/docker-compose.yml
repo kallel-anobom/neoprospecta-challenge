@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - mysql
+  mysql:
+    container_name: python_mysql
+    restart: always
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: api_challenge
+      MYSQL_USER: challenge
+      MYSQL_PASSWORD: challenge1234
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./data/db:/var/lib/mysql
