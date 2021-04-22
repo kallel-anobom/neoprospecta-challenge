@@ -1,0 +1,64 @@
+[{
+        "model": "customers.customer",
+        "pk": 1,
+        "fields": {
+            "name": "Testando Crud",
+            "age": 20,
+            "city": "Florianopolis"
+        }
+    },
+    {
+        "model": "customers.customer",
+        "pk": 2,
+        "fields": {
+            "name": "Linus Torvalds",
+            "age": 40,
+            "city": "Florianópolis"
+        }
+    },
+    {
+        "model": "customers.customer",
+        "pk": 3,
+        "fields": {
+            "name": "Steve Jobs",
+            "age": 50,
+            "city": "São Paulo"
+        }
+    },
+    {
+        "model": "customers.customer",
+        "pk": 4,
+        "fields": {
+            "name": "Steve Wozniak",
+            "age": 65,
+            "city": "São Paulo"
+        }
+    },
+    {
+        "model": "customers.customer",
+        "pk": 5,
+        "fields": {
+            "name": "Bill Gates",
+            "age": 60,
+            "city": "Rio Grande do Sul"
+        }
+    },
+    {
+        "model": "customers.customer",
+        "pk": 6,
+        "fields": {
+            "name": "Paul Allen",
+            "age": 66,
+            "city": "Rio Grande do Sul"
+        }
+    },
+    {
+        "model": "customers.customer",
+        "pk": 7,
+        "fields": {
+            "name": "Jeff Bezos",
+            "age": 77,
+            "city": "Belém"
+        }
+    }
+]

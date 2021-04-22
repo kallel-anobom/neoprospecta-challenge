@@ -1,21 +1,23 @@
-version: "3"
-
+version: "3.8"
 services:
   app:
-    build:
-      context: .
+    build: .
+    volumes:
+      - .:/app
     ports:
       - "8000:8000"
-    volumes:
-      - ./app:/app/
+    image: app:django
+    container_name: django_container
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c " python manage.py migrate &&
+      python manage.py loaddata fake_db &&
+      python manage.py runserver 0.0.0.0:8000"
     depends_on:
-      - mysql
-  mysql:
+      - db
+  db:
     container_name: python_mysql
     restart: always
-    image: mysql:8.0
+    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: api_challenge
@@ -24,4 +26,4 @@ services:
     ports:
       - "3307:3306"
     volumes:
-      - ./data/db:/var/lib/mysql
+      - ./datadb:/var/lib/mysql
